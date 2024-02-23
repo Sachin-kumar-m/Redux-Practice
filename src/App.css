@@ -25,7 +25,6 @@
 
 .products{
   border-radius: 2rem;
-  cursor: pointer;
   background: whitesmoke;
   display: flex;
   align-items: center;
