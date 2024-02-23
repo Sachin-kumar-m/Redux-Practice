@@ -7,7 +7,7 @@ const navStyle  = {
     "backgroung": "",
     "height": "3rem",
     "alignItems": "center",
-    "background":"#d1d1e3"
+    "background":"whitesmoke"
   }
   
   const margins = {
