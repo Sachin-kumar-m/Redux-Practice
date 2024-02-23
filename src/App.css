@@ -24,13 +24,10 @@
 .products{
   border-radius: 2rem;
   cursor: pointer;
+  background: whitesmoke;
 }
 
-.products:hover {
-  scale: 1.05;
-  transition-duration: 700ms;
-  box-shadow: 3px 3px 10px;
-}
+
 
 .App-logo {
   height: 40vmin;

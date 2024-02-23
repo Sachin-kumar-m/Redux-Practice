@@ -29,11 +29,11 @@ function Home() {
     }
     return (
         
-        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 45, marginTop: 20, justifyContent: "center", paddingBottom: 30 }}>
+        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 60, marginTop: 20, justifyContent: "center", paddingBottom: 30 }}>
             {products.map((product) => {
                 const { title, price, image, id } = product
-                return <div className="products" key={id} style={{width: 200, height: 400}}>
-                    <div style={{ margin:"auto",width: 190, height: 300, background: `url(${image})`,display:"flex",alignContent:"center", backgroundRepeat: 'no-repeat', backgroundSize: 'auto', WebkitBackgroundSize: "contain", flexDirection: "column-reverse", backgroundPosition:"center" }}>
+                return <div className="products" key={id} style={{width: 300, height: 400}}>
+                    <div style={{ margin:"auto",width: 190, height: 300, background: `url(${image})`,display:"flex",alignContent:"center", backgroundRepeat: 'no-repeat', backgroundSize: 'auto', WebkitBackgroundSize: "contain", flexDirection: "column-reverse", backgroundPosition:"center", mixBlendMode:"darken" }}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column-end", }}> 
                     </div>
                     </div>
