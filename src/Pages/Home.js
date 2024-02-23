@@ -32,13 +32,13 @@ function Home() {
         <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 60, marginTop: 20, justifyContent: "center", paddingBottom: 30 }}>
             {products.map((product) => {
                 const { title, price, image, id } = product
-                return <div className="products" key={id} style={{width: 300, height: 400}}>
+                return <div className="products" key={id} style={{width: 300, height: 450}}>
                     <div style={{ margin:"auto",width: 190, height: 300, background: `url(${image})`,display:"flex",alignContent:"center", backgroundRepeat: 'no-repeat', backgroundSize: 'auto', WebkitBackgroundSize: "contain", flexDirection: "column-reverse", backgroundPosition:"center", mixBlendMode:"darken" }}>
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column-end", }}> 
                     </div>
                     </div>
                     <div style={{height:40, overflow:"hidden"}}>{title}</div>
-                    <div style={{ fontWeight: "bold" }}>₹ {price}</div>
+                    <div style={{ fontWeight: "bold" }}>₹ {price*100}</div>
                     <button className="btn">Add to Cart</button>
                 </div>
             })}
