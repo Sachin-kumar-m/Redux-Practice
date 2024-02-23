@@ -1,11 +1,10 @@
-
+import React from 'react'
+import CartComponent from '../Components/CartComponent'
 
 function Cart() {
-    return (
-        <div>
-            This is Cart
-        </div>
-    )
+  return (
+    <CartComponent/>
+  )
 }
 
 export default Cart
