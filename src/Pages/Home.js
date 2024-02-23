@@ -2,10 +2,7 @@ import { useState, useEffect } from "react"
 import { URL } from "/Users/sacmahes/Desktop/My Projects/React and Redux practice/redux/src/constants.js"
 import axios from 'axios'
 
-const imageStyle = {
-    "background-repeat": "no-repeat",
-    "background-size": "cover",
-}
+
 function Home() {
     const [products, setProducts] = useState([])
     const [loading, setIsLoading] = useState(true)
@@ -37,7 +34,7 @@ function Home() {
                     <div style={{ display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column-end", }}> 
                     </div>
                     </div>
-                    <div style={{height:40, overflow:"hidden"}}>{title}</div>
+                    <div style={{height:40, overflow:"hidden", width:250}}>{title}</div>
                     <div style={{ fontWeight: "bold" }}>₹ {price*100}</div>
                     <button className="btn">Add to Cart</button>
                 </div>
