@@ -1,6 +1,8 @@
 
 import {NavLink} from 'react-router-dom'
 
+import { useSelector } from 'react-redux'// this is a hook provided by redux to get the store data
+
 const navStyle  = {
     "display": "flex",
     "justifyContent": "flex-end",
@@ -16,6 +18,10 @@ const navStyle  = {
   }
 
 function NavBar() {
+
+    //useSelector accepts a callback function and gives as access to store to retrive store values
+    const item = useSelector((store) => store.Cart) 
+
     return (
         <div style={navStyle}>
            
@@ -25,7 +31,7 @@ function NavBar() {
             <div style={margins}>
                 <NavLink to="/cart">Cart</NavLink>
             </div >
-            <div style={margins}>Cart Items 0</div>
+            <div style={margins}>Cart Items {item.length}</div>
         </div>
     )
 }
