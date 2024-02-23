@@ -1,9 +1,14 @@
 import React from 'react'
-import { useState, useEffect } from "react"
-import { URL } from "/Users/sacmahes/Desktop/My Projects/React and Redux practice/redux/src/constants.js"
 import axios from 'axios'
+import { add } from '../Slices/CartSlice'
+import { useDispatch } from 'react-redux'
+import { useState, useEffect } from "react"
+//consts
+import { URL } from "/Users/sacmahes/Desktop/My Projects/React and Redux practice/redux/src/constants.js"
+
 
 function Products() {
+    const disp = useDispatch()
     const [products, setProducts] = useState([])
     const [loading, setIsLoading] = useState(true)
     async function getProducts() {
@@ -13,6 +18,11 @@ function Products() {
             setIsLoading(false)
         }
     }
+
+    const addToCart = (product)=>{
+        disp(add(product))
+    }
+
     useEffect(() => {
         getProducts()
     }, [])
@@ -34,7 +44,7 @@ function Products() {
                     </div>
                     <div style={{ height: 40, overflow: "hidden", width: 250 }}>{title}</div>
                     <div style={{ fontWeight: "bold" }}>₹ {price * 100}</div>
-                    <button className="btn">Add to Cart</button>
+                    <button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>
                 </div>
             })}
 

@@ -1,12 +1,23 @@
 .App {
   text-align: center;
 }
+.nums{
+  width: 20px;
+  height: 20px;
+  background: green;
+}
+
 .btn:hover{
   scale: 1.09;
   transition-duration: 500ms;
   background: green;
 }
-
+.cart{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .btn{
   cursor: pointer;
   background-color: azure;
