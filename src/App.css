@@ -1,6 +1,36 @@
 .App {
   text-align: center;
 }
+.btn:hover{
+  scale: 1.09;
+  transition-duration: 500ms;
+}
+
+.btn{
+  cursor: pointer;
+  background-color: azure;
+    width: 6rem;
+    height: 2rem;
+    border-radius: 15px 
+}
+
+.loading{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products{
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.products:hover {
+  scale: 1.05;
+  transition-duration: 700ms;
+  box-shadow: 3px 3px 10px;
+}
 
 .App-logo {
   height: 40vmin;
@@ -32,6 +62,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

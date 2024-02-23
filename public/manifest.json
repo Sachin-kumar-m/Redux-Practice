@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Redux practice",
+  "name": "Redux and thunk using a fake store API",
   "icons": [
     {
       "src": "favicon.ico",
