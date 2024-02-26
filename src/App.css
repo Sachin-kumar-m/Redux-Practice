@@ -7,11 +7,17 @@
   background: green;
 }
 
+
 .btn:hover{
   scale: 1.09;
   transition-duration: 500ms;
   background: green;
 }
+.remove:hover{
+  background: rgb(223, 72, 72) !important;
+  content: "";
+}
+
 .cart{
   height: 100vh;
   display: flex;
