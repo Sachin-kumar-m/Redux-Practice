@@ -51,7 +51,7 @@ function Products() {
                     </div>
                     <div style={{ height: 40, overflow: "hidden", width: 250 }}>{title}</div>
                     <div style={{ fontWeight: "bold" }}>₹ {price * 100}</div>
-                    {itemsInCart.some(obj => obj.id === id)?<button className="btn" style={{background:"Green"}} onClick={()=>removeFromCart(id)}>In Cart</button>:<button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>}
+                    {itemsInCart.some(obj => obj.id === id)?<button className="btn remove" style={{background:"Green"}} onClick={()=>removeFromCart(id)}>In Cart</button>:<button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>}
                 </div>
             })}
 
