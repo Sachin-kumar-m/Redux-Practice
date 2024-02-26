@@ -1,11 +1,12 @@
 import React from 'react'
 import axios from 'axios'
-import { add } from '../Slices/CartSlice'
+import { add, remove } from '../Slices/CartSlice'
 import { useDispatch } from 'react-redux'
 import { useState, useEffect } from "react"
 //consts
 import { URL } from "/Users/sacmahes/Desktop/My Projects/React and Redux practice/redux/src/constants.js"
 
+import { useSelector } from 'react-redux'
 
 function Products() {
     const disp = useDispatch()
@@ -19,8 +20,14 @@ function Products() {
         }
     }
 
+    const itemsInCart = useSelector((store)=>store.Cart)
+
     const addToCart = (product)=>{
         disp(add(product))
+    }
+
+    const removeFromCart = (productID) => {
+        disp(remove(productID))
     }
 
     useEffect(() => {
@@ -44,7 +51,7 @@ function Products() {
                     </div>
                     <div style={{ height: 40, overflow: "hidden", width: 250 }}>{title}</div>
                     <div style={{ fontWeight: "bold" }}>₹ {price * 100}</div>
-                    <button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>
+                    {itemsInCart.some(obj => obj.id === id)?<button className="btn" style={{background:"Green"}} onClick={()=>removeFromCart(id)}>In Cart</button>:<button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>}
                 </div>
             })}
 
