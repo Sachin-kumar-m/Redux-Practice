@@ -15,7 +15,7 @@ function CartComponent() {
     
 
     return (
-        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 60, marginTop: 20, justifyContent: "center", paddingBottom: 30 }}>
+        <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: 60, marginTop: 20, paddingBottom: 30 }}>
             {cartData.map((cartData) => {
                 const { title, image, id } = cartData
                 return <div className="products" key={id} style={{ width: 300, height: 450 }}>
