@@ -1,25 +1,23 @@
 import React from 'react'
-import axios from 'axios'
+
 import { add, remove } from '../Slices/CartSlice'
 import { useDispatch } from 'react-redux'
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 //consts
-import { URL } from "/Users/sacmahes/Desktop/My Projects/React and Redux practice/redux/src/constants.js"
+
 
 import { useSelector } from 'react-redux'
+import { fetchProducts } from '../Slices/ProductSlice'
+
 
 function Products() {
     const disp = useDispatch()
-    const [products, setProducts] = useState([])
-    const [loading, setIsLoading] = useState(true)
+   
     async function getProducts() {
-        const response = await axios.get(URL)
-        if (response.status === 200) {
-            setProducts(response.data)
-            setIsLoading(false)
-        }
+       disp(fetchProducts()) // this is a function/reducer return in product slice. 
     }
-
+    const products = useSelector(store=>store.Product.data)
+    const loading = useSelector(store=>store.Product.status)
     const itemsInCart = useSelector((store)=>store.Cart)
 
     const addToCart = (product)=>{
@@ -34,9 +32,9 @@ function Products() {
 
     useEffect(() => {
         getProducts()
-    }, [])
+    },[])
 
-    if (loading) {
+    if (loading==="LOADING") {
         return <div className="loading">
             <h2>Loading.....</h2>
         </div>
