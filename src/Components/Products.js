@@ -16,8 +16,8 @@ function Products() {
     async function getProducts() {
        disp(fetchProducts()) // this is a function/reducer return in product slice. 
     }
-    const products = useSelector(store=>store.Product.data)
-    const loading = useSelector(store=>store.Product.status)
+    
+    const {data:products,status:loading} = useSelector(store=>store.Product)
     const itemsInCart = useSelector((store)=>store.Cart)
 
     const addToCart = (product)=>{
