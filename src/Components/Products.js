@@ -24,10 +24,12 @@ function Products() {
 
     const addToCart = (product)=>{
         disp(add(product))
+        console.log(product.title ,"=> Added to Cart");
     }
 
     const removeFromCart = (productID) => {
         disp(remove(productID))
+        console.log(productID ,"=> Removed from Cart");
     }
 
     useEffect(() => {
@@ -51,7 +53,7 @@ function Products() {
                     </div>
                     <div style={{ height: 40, overflow: "hidden", width: 250 }}>{title}</div>
                     <div style={{ fontWeight: "bold" }}>₹ {price * 100}</div>
-                    {itemsInCart.some(obj => obj.id === id)?<button className="btn remove" style={{background:"Green"}} onClick={()=>removeFromCart(id)}>In Cart</button>:<button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>}
+                    {itemsInCart.find(obj => obj.id === id)?<button className="btn remove" style={{background:"Green"}} onClick={()=>removeFromCart(id)}>In Cart</button>:<button className="btn" onClick={()=>addToCart(product)}>Add to Cart</button>}
                 </div>
             })}
 
